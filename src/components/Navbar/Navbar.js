@@ -1,8 +1,12 @@
+import { useState } from "react";
 import gsap from "gsap";
 import { StaggerWrapper, LineContainer, Line, NavLink, LeftArrow } from "./navbar.style";
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     const handleOpen = () => {
+        setIsOpen(isOpen)
         if (window.innerWidth > 1000) {
             const tl = gsap.timeline();
             tl.to(".line0", 0, { x: 0 }, 0)
@@ -19,6 +23,7 @@ const Navbar = () => {
     };
 
     const handleClose = () => {
+        setIsOpen(!isOpen)
         const tl = gsap.timeline();
         tl.to(".line", 1, { x: 0 })
         tl.to('.p', 1, { x: 0 }, 0)
