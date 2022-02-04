@@ -19,3 +19,8 @@ function App() {
 }
 
 export default App;
+
+
+/* TODO
+- screen resize
+*/
